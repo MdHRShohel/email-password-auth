@@ -1,13 +1,10 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 const Main = () => {
     return (
         <div>
-            <nav className='w-25 mx-auto'>
-                <Link to='/login'>Login</Link>
-                <Link to='/register'>Register</Link>
-            </nav>
+        <h2 className='w-50 mx-auto'>React Firebase Authentication</h2>
             <Outlet></Outlet>
         </div>
     );

@@ -30,9 +30,7 @@ import RegisterReactBootStrap from './components/RegisterReactBootStrap';
 
 function App() {
   return (
-    <div>
-      <h1 className='w-50 mx-auto'>React Firebase Auth</h1>
-      
+    <div>      
       <RouterProvider router={router}></RouterProvider>
 
 
