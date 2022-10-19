@@ -6,4 +6,12 @@ Auth Terminology and Concepts
 
 "log in" or "Sign IN" ==== sign in [Already have an account? Sign in]
 
+
+get form value:
+set form onsubmit event handler
+set event parameter 
+set event.preventDefault();
+event.target.email.value
+event.target.password.value
+
 */
