@@ -1,9 +1,9 @@
-import { getAuth } from 'firebase/auth';
-import app from './firebase/firebase.init';
-import Register from './components/Register';
+// import { getAuth } from 'firebase/auth';
+// import app from './firebase/firebase.init';
+// import Register from './components/Register';
 import RegisterReactBootStrap from './components/RegisterReactBootStrap';
 
-const auth = getAuth(app);
+// const auth = getAuth(app);
 
 
 function App() {
