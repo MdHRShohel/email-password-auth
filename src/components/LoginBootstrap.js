@@ -8,6 +8,7 @@ const auth = getAuth(app);
 
 const LoginBootstrap = () => {
     const [success, setSuccess] = useState(false);
+    const [userEmail, setUserEmail] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -29,10 +30,22 @@ const LoginBootstrap = () => {
             })
     }
 
+    const handleEmailBlur = (e) => {
+        const email = e.target.value;
+        setUserEmail(email);
+    }
+
     const handleForgetPassword = () => {
-        sendPasswordResetEmail(auth, )
+        if(!userEmail){
+            alert('Please enter your email first');
+            return;
+        }
+        sendPasswordResetEmail(auth,userEmail)
             .then(() => {
                 alert('Password reset email sent! Check your inbox.');
+            })
+            .catch(error => {
+                console.error(error.message);
             })
     }
 
@@ -43,11 +56,11 @@ const LoginBootstrap = () => {
             <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formGroupEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control name='email' type="email" placeholder="Enter email" required />
+                <Form.Control onBlur={handleEmailBlur} name='email' type="email" placeholder="Enter email" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formGroupPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control name='password' type="password" placeholder="Password" required />
+                <Form.Control name='password' type="password" placeholder="Password" />
             </Form.Group>
             <Button variant="primary" type="submit">Log in</Button>
 
